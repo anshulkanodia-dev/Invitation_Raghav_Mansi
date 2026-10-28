@@ -18,6 +18,11 @@ Then open http://localhost:8080/.
 2. **Source:** Deploy from a branch. **Branch:** `main`, folder `/ (root)`. Save.
 3. The site is published at `https://<username>.github.io/Di/` within a minute or two.
 
+## Two invite links
+
+- Bride's side: `/` shows **Mansi & Raghav** and **Kanodia & Singla Families**.
+- Groom's side: `/raghav/` shows **Raghav & Mansi** and **Singla & Kanodia Families**. It redirects to `/?side=groom`, and a small script in `index.html` swaps the names, so both links always share the same page.
+
 ## Editing details
 
 - Names, dates, events and venue: `index.html`.
