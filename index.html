@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Mansi & Raghav · 29–30 November</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Italiana&family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" />
+<link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body class="locked">
+
+<!-- 1. Envelope intro (full screen) -->
+<div id="intro">
+  <div class="envelope" id="envelope">
+    <div class="env-back"></div>
+    <div class="env-card">
+      <img src="assets/ganesh-logo.png" alt="" class="card-logo" />
+      <p class="card-eyebrow">Shubh Vivah</p>
+      <p class="card-script">Mansi</p>
+      <p class="card-amp">&amp;</p>
+      <p class="card-script">Raghav</p>
+      <p class="card-date">29 &amp; 30 November</p><p class="card-venue">Nishuraj Resort · Sirsa</p>
+    </div>
+    <div class="fw fw-l"><i class="trim"></i><i class="fold"></i></div>
+    <div class="fw fw-r"><i class="trim"></i><i class="fold"></i></div>
+    <div class="fw fw-b"><i class="trim"></i><i class="fold"></i></div>
+    <div class="env-flap"><i class="trim"></i><i class="flap-face"></i><i class="flap-in"></i></div>
+    <button class="seal" id="seal" aria-label="Open invitation">
+      <img src="art/env_seal_cut.png" alt="" class="wax" />
+      <img src="assets/ganesh-logo.png" alt="" class="crest" />
+    </button>
+  </div>
+  <canvas class="sparkles" data-count="40"></canvas>
+  <p class="env-to">An invitation for you</p>
+  <div class="env-names"><p>Mansi <span>&amp;</span> Raghav</p><small>29 &amp; 30 November</small></div>
+  <p class="intro-hint">Tap the seal to open</p>
+  <div class="flash"></div>
+</div>
+
+<main id="site">
+  <!-- 2. Hero -->
+  <section id="hero">
+    <canvas class="sparkles" data-count="60"></canvas>
+    <img src="assets/mandala.png" class="mandala m1" data-parallax="0.25" alt="" />
+    <img src="assets/mandala.png" class="mandala m2" data-parallax="-0.18" alt="" />
+    <div class="hero-inner">
+      <img src="assets/ganesh-logo.png" class="hero-logo rise" style="--d:0s" alt="" />
+      <p class="eyebrow rise" style="--d:.15s">You are cordially invited to the wedding of</p>
+      <h1 class="script rise" style="--d:.35s">Mansi</h1>
+      <div class="amp-row rise" style="--d:.55s"><span></span><em>&amp;</em><span></span></div>
+      <h1 class="script rise" style="--d:.7s">Raghav</h1>
+      <p class="tagline rise" style="--d:.9s">Two hearts. One forever.</p>
+      <p class="hashtag rise" style="--d:1.05s">Nishuraj Resort · Sirsa</p>
+      <p class="scroll-cue rise" style="--d:1.3s">Scroll to explore<span>⌄</span></p>
+    </div>
+  </section>
+
+  <!-- 3. Scratch to reveal -->
+  <section id="date" class="reveal-sec">
+    <p class="eyebrow gold">Save the date</p>
+    <h2 class="display">Scratch to Reveal</h2>
+    <p class="sub">Rub the hearts to find out when</p>
+    <div class="hearts">
+      <div class="heart"><div class="heart-val"><b>30</b><small>Day</small></div><canvas></canvas></div>
+      <div class="heart"><div class="heart-val"><b>Nov</b><small>Month</small></div><canvas></canvas></div>
+      <div class="heart"><div class="heart-val"><b>2026</b><small>Year</small></div><canvas></canvas></div>
+    </div>
+    <div class="countdown" id="countdown">
+      <div><b data-k="d">00</b><small>Days</small></div>
+      <div><b data-k="h">00</b><small>Hours</small></div>
+      <div><b data-k="m">00</b><small>Minutes</small></div>
+      <div><b data-k="s">00</b><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- 4. Event card stack -->
+  <section id="events">
+    <div class="events-head">
+      <p class="eyebrow gold">The celebrations</p>
+      <h2 class="display">Wedding Itinerary</h2>
+    </div>
+    <div class="stack">
+      <article class="ev-card" style="--bg:linear-gradient(160deg,#ffd9de,#f7b9c4)">
+        <img src="assets/caricature-haldi.jpg" alt="Haldi" />
+        <div class="ev-body">
+          <p class="eyebrow">Day 1 · Floral theme</p>
+          <h3>Haldi Carnival</h3>
+          <p class="ev-meta">29 November · 11 AM onwards</p>
+          <p class="ev-venue">Nishuraj Resort, Sirsa</p>
+        </div>
+      </article>
+      <article class="ev-card" style="--bg:linear-gradient(160deg,#5a1a24,#2e0d14)">
+        <img src="assets/caricature-sangeet.jpg" alt="Sangeet" />
+        <div class="ev-body light">
+          <p class="eyebrow">Day 1 · Music · Laughter · Forever</p>
+          <h3>Engagement &amp; Sangeet</h3>
+          <p class="ev-meta">29 November · 6 PM onwards</p>
+          <p class="ev-venue">Nishuraj Resort, Sirsa</p>
+        </div>
+      </article>
+      <article class="ev-card" style="--bg:linear-gradient(160deg,#ffe2c4,#f4b27a)">
+        <img src="assets/caricature-mayra.jpg" alt="Mayra" style="object-position:center 25%" />
+        <div class="ev-body">
+          <p class="eyebrow">Day 2 · Blessings · Family</p>
+          <h3>Mayra</h3>
+          <p class="ev-meta">30 November · 11 AM onwards</p>
+          <p class="ev-venue">Nishuraj Resort, Sirsa</p>
+        </div>
+      </article>
+      <article class="ev-card" style="--bg:linear-gradient(160deg,#7a0e1e,#3c0710)">
+        <img src="assets/caricature-wedding.jpg" alt="Wedding" />
+        <div class="ev-body light">
+          <p class="eyebrow">Day 2 · Love · Happily ever after</p>
+          <h3>Wedding Ceremony</h3>
+          <p class="ev-meta">30 November · 6 PM onwards</p>
+          <p class="ev-venue">Nishuraj Resort, Sirsa</p>
+        </div>
+      </article>
+      <article class="ev-card" style="--bg:linear-gradient(160deg,#1c2340,#0c1024)">
+        <img src="assets/caricature-reception.jpg" alt="Reception" style="object-position:center 15%" />
+        <div class="ev-body light">
+          <p class="eyebrow">Day 2 · Celebrate the newlyweds</p>
+          <h3>Reception</h3>
+          <p class="ev-meta">30 November · 8 PM onwards</p>
+          <p class="ev-venue">Nishuraj Resort, Sirsa</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. Timeline -->
+  <section id="timeline">
+    <p class="eyebrow gold">Day by day</p>
+    <h2 class="display">The Celebration Unfolds</h2>
+    <div class="tl">
+      <div class="tl-line"><span></span></div>
+      <div class="tl-item left"><span class="dot"></span><div class="tl-card"><small>29 Nov · 11 AM</small><h4>Haldi Carnival</h4><p>A floral haldi of marigolds and golden mischief.</p></div></div>
+      <div class="tl-item right"><span class="dot"></span><div class="tl-card"><small>29 Nov · 6 PM</small><h4>Engagement &amp; Sangeet</h4><p>Rings, music and family performances.</p></div></div>
+      <div class="tl-item left"><span class="dot"></span><div class="tl-card"><small>30 Nov · 11 AM</small><h4>Mayra</h4><p>The maternal family arrives with blessings and gifts.</p></div></div>
+      <div class="tl-item right"><span class="dot"></span><div class="tl-card"><small>30 Nov · 6 PM</small><h4>Wedding Ceremony</h4><p>Pheras under a mandap of roses and fairy lights.</p></div></div>
+      <div class="tl-item left"><span class="dot"></span><div class="tl-card"><small>30 Nov · 8 PM</small><h4>Reception</h4><p>An evening to celebrate the newlyweds.</p></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-eyebrow">Awaiting your gracious presence</p>
+    <p class="script small">Kanodia &amp; Singla Families</p>
+    <p class="sub light">A divine union of two souls, two families, and one beautiful future.</p>
+  </footer>
+</main>
+
+<button id="music" aria-label="Toggle music"><span class="bars"><i></i><i></i><i></i><i></i></span></button>
+<canvas id="confetti"></canvas>
+<script src="app.js?v=3"></script>
+</body>
+</html>
