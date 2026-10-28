@@ -23,3 +23,4 @@ Then open http://localhost:8080/.
 - Names, dates, events and venue: `index.html`.
 - Countdown target: `app.js` (`target` date).
 - Event photos: `assets/caricature-*.jpg`; envelope artwork: `art/`.
+- Background music: `audio/wedding-instrumental.mp3` — "Indian Wedding" by India_Happy, from [Pixabay](https://pixabay.com/music/folk-indian-wedding-490659/) under the Pixabay Content License (free for use, no attribution required). Starts when the envelope is opened; the gold button toggles it.

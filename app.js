@@ -38,41 +38,25 @@
     requestAnimationFrame(tick);
   });
 
-  /* ---------- Music (synthesised so no audio file is needed) ---------- */
-  let audio = null;
+  /* ---------- Music ---------- */
   const music = $('#music');
+  const track = new Audio('audio/wedding-instrumental.mp3');
+  track.loop = true; track.preload = 'auto'; track.volume = 0;
+  let fade = null;
+  const fadeTo = (v) => {
+    clearInterval(fade);
+    fade = setInterval(() => {
+      const d = v - track.volume;
+      if (Math.abs(d) < 0.03) { track.volume = v; clearInterval(fade); if (!v) track.pause(); return; }
+      track.volume = Math.min(1, Math.max(0, track.volume + Math.sign(d) * 0.03));
+    }, 60);
+  };
   const startMusic = () => {
-    const AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC) return;
-    const ac = new AC();
-    const master = ac.createGain(); master.gain.value = 0.18; master.connect(ac.destination);
-    const delay = ac.createDelay(); delay.delayTime.value = 0.38;
-    const fb = ac.createGain(); fb.gain.value = 0.35;
-    delay.connect(fb); fb.connect(delay); delay.connect(master);
-    [130.81, 196.0].forEach((f) => {
-      const o = ac.createOscillator(); const g = ac.createGain();
-      o.type = 'sine'; o.frequency.value = f; g.gain.value = 0.12;
-      o.connect(g); g.connect(master); o.start();
-    });
-    const scale = [261.63, 293.66, 329.63, 392.0, 440.0, 523.25, 587.33];
-    const phrase = [0, 2, 3, 4, 3, 2, 1, 0, 2, 4, 5, 4, 3, 2, 3, 1];
-    let i = 0;
-    const pluck = () => {
-      const t = ac.currentTime;
-      const o = ac.createOscillator(); const g = ac.createGain();
-      o.type = 'triangle'; o.frequency.value = scale[phrase[i++ % phrase.length]];
-      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.5, t + 0.02);
-      g.gain.exponentialRampToValueAtTime(0.0001, t + 1.4);
-      o.connect(g); g.connect(master); g.connect(delay); o.start(t); o.stop(t + 1.5);
-    };
-    const id = setInterval(pluck, 520);
-    audio = { ac, id };
-    music.classList.add('playing');
+    track.play().then(() => { music.classList.add('playing'); fadeTo(0.55); }).catch(() => {});
   };
   music.addEventListener('click', () => {
-    if (!audio) return startMusic();
-    if (audio.ac.state === 'running') { audio.ac.suspend(); music.classList.remove('playing'); }
-    else { audio.ac.resume(); music.classList.add('playing'); }
+    if (track.paused || !music.classList.contains('playing')) startMusic();
+    else { music.classList.remove('playing'); fadeTo(0); }
   });
 
   /* ---------- Envelope intro ---------- */
