@@ -152,6 +152,18 @@
 
 <button id="music" aria-label="Toggle music"><span class="bars"><i></i><i></i><i></i><i></i></span></button>
 <canvas id="confetti"></canvas>
+<script>
+  /* Groom's side link (raghav/ → ?side=groom): Raghav & Mansi, Singla & Kanodia */
+  if (new URLSearchParams(location.search).get('side') === 'groom') {
+    const map = { Mansi: 'Raghav', Raghav: 'Mansi', Kanodia: 'Singla', Singla: 'Kanodia' };
+    const re = /\b(Mansi|Raghav|Kanodia|Singla)\b/g;
+    const fix = (t) => t.replace(re, (w) => map[w]);
+    document.title = fix(document.title);
+    const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walk.nextNode()) walk.currentNode.nodeValue = fix(walk.currentNode.nodeValue);
+    document.querySelectorAll('[alt]').forEach((el) => { el.alt = fix(el.alt); });
+  }
+</script>
 <script src="app.js?v=4"></script>
 </body>
 </html>
